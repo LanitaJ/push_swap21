@@ -6,7 +6,7 @@
 /*   By: ljerk <ljerk@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/23 18:29:32 by ljerk             #+#    #+#             */
-/*   Updated: 2020/03/06 18:55:44 by ljerk            ###   ########.fr       */
+/*   Updated: 2020/08/07 21:06:17 by ljerk            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 # include <stdarg.h>
 # include <unistd.h>
 # include <stdlib.h>
-
+# include "../libft/libft.h"
 typedef struct			s_flag
 {
 	int					plus;

@@ -6,7 +6,48 @@
 #    By: ljerk <ljerk@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/07/30 14:07:28 by ljerk             #+#    #+#              #
-#    Updated: 2020/08/01 19:25:46 by ljerk            ###   ########.fr        #
+#    Updated: 2020/08/07 21:16:52 by ljerk            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
+NAME_C = checker
+NAME_P = push_swap
+
+LIB_DIR = ./ft_printf/
+LIBFT = $(LIB_DIR)libftprintf.a
+
+SRC_C = ./checker.c\
+        
+SRC_P = ./push_swap.c\
+
+
+OBJ_C = $(SRC_C:.c=.o)
+OBJ_P = $(SRC_P:.c=.o)
+
+INCLUDE = ./push_swap.h
+
+CC = gcc
+
+FLAGS = -Wall -Wextra -Werror
+
+all: $(NAME_C) $(NAME_P)
+
+%.o: %.c
+	@$(CC) -c $(FLAGS) $<
+
+$(NAME_C): $(OBJ_C)
+	@$(MAKE) -C $(LIB_DIR)
+	@$(CC) $(FLAGS) -o $(NAME_C) $(OBJ_C) $(LIBFT)
+
+$(NAME_P): $(OBJ_P)
+	@$(CC) $(FLAGS) -o $(NAME_P) $(OBJ_P) $(LIBFT)
+
+clean:
+	@rm -rf $(OBJ_C) $(OBJ_P)
+	@$(MAKE) -C $(LIB_DIR) clean
+
+fclean: clean
+	@rm -rf $(NAME_C) $(NAME_P)
+	@$(MAKE) -C $(LIB_DIR) fclean
+
+re: fclean all
