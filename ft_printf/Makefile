@@ -6,7 +6,7 @@
 #    By: ljerk <ljerk@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/02/25 16:08:43 by ljerk             #+#    #+#              #
-#    Updated: 2020/08/07 21:15:22 by ljerk            ###   ########.fr        #
+#    Updated: 2020/08/12 17:21:35 by ljerk            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,7 +26,7 @@ SRC =	ft_printf.c specificator.c flags.c fourthflags.c star.c\
 OBJ = $(SRC:.c=.o)
 
 OPTION = includes/ft_printf.h
-FLAGS = -Wall -Wextra -Werror
+FLAGS = -g -Wall -Wextra -Werror
 
 all: $(NAME)
 

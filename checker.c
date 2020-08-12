@@ -6,40 +6,47 @@
 /*   By: ljerk <ljerk@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/01 16:19:51 by ljerk             #+#    #+#             */
-/*   Updated: 2020/08/07 21:41:13 by ljerk            ###   ########.fr       */
+/*   Updated: 2020/08/12 20:46:07 by ljerk            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "includes/push_swap.h"
 
-int main(int argc, char **av)
+void	find_flags(char ***av, stacks_t *stacks)
 {
-	char **arr;
-	/* int	fd;
-	t_stacks *stacks;
+	if (ft_strequ(**av, "-v"))
+	{
+		stacks->flag_v = 1;
+		(*av)++;
+		find_flags(av, stacks);
+	}
+	if (ft_strequ(**av, "-c"))
+	{
+		stacks->flag_c = 1;
+		(*av)++;
+		find_flags(av, stacks);
+	}
+}
 
+
+
+int main(int ac, char **av)
+{
+	int	fd;
+	stacks_t stacks;
+
+	av++;
+	ft_bzero(&stacks, sizeof(stacks_t));
+	find_flags(&av, &stacks);
 	if (ac == 1)
 		return (0);
 	fd = open(av[0], O_RDONLY);
+	//ft_printf("%d", fd);
 	if (fd == -1)
 		fd = 0;
-	*/
-	int i = 0;
-	argc--;
-	while (i < 4)
-	{
-		//ft_printf("%s ", av[i]);
-		arr = ft_strsplit(av[i], ' ');
-		ft_printf("%s", **arr);
-		/* while (arr)
-		{
-			ft_printf("%s", *arr);
-			arr++;
-		} */
-		i++;
-	}
-	
-	
+	else
+		av++;
+	create_stacks(&stacks, ac - 1, av);	
 }
 
 /*

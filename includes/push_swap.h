@@ -6,7 +6,7 @@
 /*   By: ljerk <ljerk@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/30 14:04:27 by ljerk             #+#    #+#             */
-/*   Updated: 2020/08/07 20:54:56 by ljerk            ###   ########.fr       */
+/*   Updated: 2020/08/12 19:55:37 by ljerk            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ typedef struct	s_stacks
 	int			max;
 	int			flag_v;
 	int			flag_c;
-}				t_stacks;
+}				stacks_t;
 
 typedef struct	s_commands
 {
@@ -49,5 +49,9 @@ typedef struct	s_commands
 	int			rrr;
 	int			count;
 }				t_commands;
+
+void	print_error(stacks_t *stacks);
+void	create_stacks(stacks_t *stacks, int ac, char **av);
+
 
 #endif

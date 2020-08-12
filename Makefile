@@ -6,7 +6,7 @@
 #    By: ljerk <ljerk@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/07/30 14:07:28 by ljerk             #+#    #+#              #
-#    Updated: 2020/08/07 21:16:52 by ljerk            ###   ########.fr        #
+#    Updated: 2020/08/12 20:46:32 by ljerk            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,9 +16,9 @@ NAME_P = push_swap
 LIB_DIR = ./ft_printf/
 LIBFT = $(LIB_DIR)libftprintf.a
 
-SRC_C = ./checker.c\
+SRC_C = ./checker.c ./create_stacks.c\
         
-SRC_P = ./push_swap.c\
+SRC_P = ./push_swap.c ./create_stacks.c\
 
 
 OBJ_C = $(SRC_C:.c=.o)
@@ -26,7 +26,7 @@ OBJ_P = $(SRC_P:.c=.o)
 
 INCLUDE = ./push_swap.h
 
-CC = gcc
+CC = gcc -g
 
 FLAGS = -Wall -Wextra -Werror
 
