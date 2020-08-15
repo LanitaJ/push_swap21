@@ -6,7 +6,7 @@
 /*   By: ljerk <ljerk@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/12 15:54:47 by ljerk             #+#    #+#             */
-/*   Updated: 2020/08/12 20:50:01 by ljerk            ###   ########.fr       */
+/*   Updated: 2020/08/15 16:21:20 by ljerk            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,15 +79,6 @@ static int		*create_stack_a(int *ac, char **av)
 		ft_freestrarr(arr);
 	}
 	return (stack_a);
-}
-
-void	print_error(stacks_t *stacks)
-{
-	if (stacks->flag_c)
-		ft_printf(RED"Error"RESET);
-	else
-		ft_printf("Error");
-	exit(1);
 }
 
 void	create_stacks(stacks_t *stacks, int ac, char **av)

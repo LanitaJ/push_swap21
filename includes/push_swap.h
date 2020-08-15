@@ -6,7 +6,7 @@
 /*   By: ljerk <ljerk@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/30 14:04:27 by ljerk             #+#    #+#             */
-/*   Updated: 2020/08/12 19:55:37 by ljerk            ###   ########.fr       */
+/*   Updated: 2020/08/15 15:40:07 by ljerk            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,8 +50,19 @@ typedef struct	s_commands
 	int			count;
 }				t_commands;
 
-void	print_error(stacks_t *stacks);
-void	create_stacks(stacks_t *stacks, int ac, char **av);
 
+void			ft_do_sa(stacks_t *stacks);
+void			ft_do_sb(stacks_t *stacks);
+void			ft_do_rra(stacks_t *stacks);
+void			ft_do_ra(stacks_t *stacks);
+void			ft_do_rrb(stacks_t *stacks);
+void			ft_do_rb(stacks_t *stacks);
+void			ft_do_pb(stacks_t *stacks);
+void			ft_do_pa(stacks_t *stacks);
+
+void			print_error(stacks_t *stacks);
+void			create_stacks(stacks_t *stacks, int ac, char **av);
+void			print_stack(stacks_t *stacks);
+int				check(int fd, stacks_t *stacks);
 
 #endif

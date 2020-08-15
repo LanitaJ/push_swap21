@@ -6,7 +6,7 @@
 /*   By: ljerk <ljerk@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/01 16:19:51 by ljerk             #+#    #+#             */
-/*   Updated: 2020/08/12 20:46:07 by ljerk            ###   ########.fr       */
+/*   Updated: 2020/08/15 16:21:24 by ljerk            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,15 @@ int main(int ac, char **av)
 		fd = 0;
 	else
 		av++;
-	create_stacks(&stacks, ac - 1, av);	
+	create_stacks(&stacks, ac - 1, av);
+	print_stack(&stacks);
+	
+	/* if (check(fd, &stacks))
+		stacks.flag_c ? ft_printf(GRN"OK\n"RESET) : ft_printf("OK\n");
+	else
+		stacks.flag_c ? ft_printf(RED"KO\n"RESET) : ft_printf("KO\n"); */
+	free(stacks.a);
+	free(stacks.b);
 }
 
 /*
