@@ -6,7 +6,7 @@
 /*   By: ljerk <ljerk@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/30 14:04:27 by ljerk             #+#    #+#             */
-/*   Updated: 2020/08/15 15:40:07 by ljerk            ###   ########.fr       */
+/*   Updated: 2020/08/16 07:42:44 by ljerk            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ typedef struct	s_stacks
 	int			max;
 	int			flag_v;
 	int			flag_c;
-}				stacks_t;
+}				t_stacks;
 
 typedef struct	s_commands
 {
@@ -51,18 +51,18 @@ typedef struct	s_commands
 }				t_commands;
 
 
-void			ft_do_sa(stacks_t *stacks);
-void			ft_do_sb(stacks_t *stacks);
-void			ft_do_rra(stacks_t *stacks);
-void			ft_do_ra(stacks_t *stacks);
-void			ft_do_rrb(stacks_t *stacks);
-void			ft_do_rb(stacks_t *stacks);
-void			ft_do_pb(stacks_t *stacks);
-void			ft_do_pa(stacks_t *stacks);
+void			ft_do_sa(t_stacks *stacks);
+void			ft_do_sb(t_stacks *stacks);
+void			ft_do_rra(t_stacks *stacks);
+void			ft_do_ra(t_stacks *stacks);
+void			ft_do_rrb(t_stacks *stacks);
+void			ft_do_rb(t_stacks *stacks);
+void			ft_do_pb(t_stacks *stacks);
+void			ft_do_pa(t_stacks *stacks);
 
-void			print_error(stacks_t *stacks);
-void			create_stacks(stacks_t *stacks, int ac, char **av);
-void			print_stack(stacks_t *stacks);
-int				check(int fd, stacks_t *stacks);
-
+void			print_error(t_stacks *stacks);
+void			create_stacks(t_stacks *stacks, int ac, char **av);
+void			print_stack(t_stacks *stacks);
+int				check(int fd, t_stacks *stacks);
+int				atoi_ps(const char *str, t_stacks *stacks);
 #endif

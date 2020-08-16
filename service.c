@@ -6,13 +6,13 @@
 /*   By: ljerk <ljerk@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/15 15:21:57 by ljerk             #+#    #+#             */
-/*   Updated: 2020/08/15 15:37:08 by ljerk            ###   ########.fr       */
+/*   Updated: 2020/08/16 07:23:30 by ljerk            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "includes/push_swap.h"
 
-void	print_error(stacks_t *stacks)
+void	print_error(t_stacks *stacks)
 {
 	if (stacks->flag_c)
 		ft_printf(RED"Error"RESET);
@@ -21,7 +21,7 @@ void	print_error(stacks_t *stacks)
 	exit(1);
 }
 
-void	print_stack(stacks_t *stacks)
+void	print_stack(t_stacks *stacks)
 {
 	int	i;
 

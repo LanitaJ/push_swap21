@@ -6,13 +6,13 @@
 /*   By: ljerk <ljerk@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/12 15:54:47 by ljerk             #+#    #+#             */
-/*   Updated: 2020/08/15 16:21:20 by ljerk            ###   ########.fr       */
+/*   Updated: 2020/08/16 07:42:52 by ljerk            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "includes/push_swap.h"
 
-static int		check_double(stacks_t *stacks)
+static int		check_double(t_stacks *stacks)
 {
 	int	i;
 	int j;
@@ -55,7 +55,7 @@ static int		count_nums(char **av)
 	return (n);
 }
 
-static int		*create_stack_a(int *ac, char **av)
+static int		*create_stack_a(int *ac, char **av, t_stacks *stacks)
 {
 	int		*stack_a;
 	int		n;
@@ -74,16 +74,16 @@ static int		*create_stack_a(int *ac, char **av)
 		arr = ft_strsplit(av[i], ' ');
 		j = 0;
 		while (arr[j])
-			stack_a[n++] = ft_atoi(arr[j++]);
+			stack_a[n++] = atoi_ps(arr[j++], stacks);
 		i++;
 		ft_freestrarr(arr);
 	}
 	return (stack_a);
 }
 
-void	create_stacks(stacks_t *stacks, int ac, char **av)
+void	create_stacks(t_stacks *stacks, int ac, char **av)
 {
-	stacks->a = create_stack_a(&ac, av);
+	stacks->a = create_stack_a(&ac, av, stacks);
 	stacks->b = (int*)ft_memalloc(sizeof(int*) * ac);
 	stacks->count_a = ac;
 	if (check_double(stacks))

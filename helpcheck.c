@@ -6,13 +6,13 @@
 /*   By: ljerk <ljerk@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/15 14:29:02 by ljerk             #+#    #+#             */
-/*   Updated: 2020/08/15 15:52:11 by ljerk            ###   ########.fr       */
+/*   Updated: 2020/08/16 08:19:54 by ljerk            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "includes/push_swap.h"
 
-int				check_sorted(stacks_t stacks)
+int				check_sorted(t_stacks stacks)
 {
 	int	i;
 
@@ -28,7 +28,7 @@ int				check_sorted(stacks_t stacks)
 	return (1);
 }
 
-static void		next_commands(stacks_t *stacks, char *line)
+static void		next_commands(t_stacks *stacks, char *line)
 {
 	if (ft_strequ(line, "ss"))
 	{
@@ -49,7 +49,7 @@ static void		next_commands(stacks_t *stacks, char *line)
 		print_error(stacks);
 }
 
-static void    make_commands(stacks_t *stacks, char *line)
+static void    make_commands(t_stacks *stacks, char *line)
 {
 	if (ft_strequ(line, "sa"))
 		ft_do_sa(stacks);
@@ -71,7 +71,7 @@ static void    make_commands(stacks_t *stacks, char *line)
 		next_commands(stacks, line);
 }
 
-int		check(int fd, stacks_t *stacks)
+int		check(int fd, t_stacks *stacks)
 {
 	char	*line;
 
