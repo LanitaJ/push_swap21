@@ -6,27 +6,13 @@
 /*   By: ljerk <ljerk@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/01 16:19:51 by ljerk             #+#    #+#             */
-/*   Updated: 2020/08/16 08:09:25 by ljerk            ###   ########.fr       */
+/*   Updated: 2020/08/17 14:25:02 by ljerk            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "includes/push_swap.h"
 
-void	find_flags(char ***av, t_stacks *stacks)
-{
-	if (ft_strequ(**av, "-v"))
-	{
-		stacks->flag_v = 1;
-		(*av)++;
-		find_flags(av, stacks);
-	}
-	if (ft_strequ(**av, "-c"))
-	{
-		stacks->flag_c = 1;
-		(*av)++;
-		find_flags(av, stacks);
-	}
-}
+
 
 
 

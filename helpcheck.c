@@ -6,7 +6,7 @@
 /*   By: ljerk <ljerk@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/15 14:29:02 by ljerk             #+#    #+#             */
-/*   Updated: 2020/08/16 08:19:54 by ljerk            ###   ########.fr       */
+/*   Updated: 2020/08/17 12:54:58 by ljerk            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,7 +84,6 @@ int		check(int fd, t_stacks *stacks)
 		if (stacks->flag_v)
 			print_stack(stacks);
 		free(line);
-		
 	}
 	if (check_sorted(*stacks))
 		return (1);

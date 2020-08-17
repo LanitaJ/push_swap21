@@ -6,7 +6,7 @@
 /*   By: ljerk <ljerk@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/30 14:04:27 by ljerk             #+#    #+#             */
-/*   Updated: 2020/08/16 07:42:44 by ljerk            ###   ########.fr       */
+/*   Updated: 2020/08/17 14:25:13 by ljerk            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,9 @@ void			ft_do_pa(t_stacks *stacks);
 void			print_error(t_stacks *stacks);
 void			create_stacks(t_stacks *stacks, int ac, char **av);
 void			print_stack(t_stacks *stacks);
+void			find_flags(char ***av, t_stacks *stacks);
 int				check(int fd, t_stacks *stacks);
+void			push_swap(t_stacks stacks);
 int				atoi_ps(const char *str, t_stacks *stacks);
+int				check_sorted(t_stacks stacks);
 #endif

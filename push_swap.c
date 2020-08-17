@@ -6,18 +6,33 @@
 /*   By: ljerk <ljerk@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/30 18:51:51 by ljerk             #+#    #+#             */
-/*   Updated: 2020/08/15 14:10:37 by ljerk            ###   ########.fr       */
+/*   Updated: 2020/08/17 14:23:54 by ljerk            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "includes/push_swap.h"
 
 int     main(int ac, char **av)
 {
-    ac--;
-    av++;
-    if (ac < 2)
-        return (1);
-    return (0);
+	int	fd;
+	t_stacks stacks;
+
+	av++;
+	ft_bzero(&stacks, sizeof(t_stacks));
+	find_flags(&av, &stacks);
+	if (ac == 1)
+		return (0);
+	fd = open(av[0], O_RDONLY);
+	if (fd == -1)
+		fd = 0;
+	else
+		av++;
+	create_stacks(&stacks, ac - 1, av);
+	if (stacks.flag_v)
+		print_stack(&stacks);
+	push_swap(stacks);
+	free(stacks.a);
+	free(stacks.b);
 }
 
 /*
