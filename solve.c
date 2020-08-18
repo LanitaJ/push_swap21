@@ -6,7 +6,7 @@
 /*   By: ljerk <ljerk@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/17 13:44:32 by ljerk             #+#    #+#             */
-/*   Updated: 2020/08/18 17:43:25 by ljerk            ###   ########.fr       */
+/*   Updated: 2020/08/18 18:54:15 by ljerk            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,7 +97,6 @@ void	push_to_b(t_stacks *stacks)
 			stacks->min = stacks->a[i];
 	}
 	split_two(stacks);
-	print_stack(stacks);
 	while (stacks->count_a > 3)
 	{
 		if (stacks->a[0] == stacks->max || stacks->a[0] == stacks->min)
@@ -113,22 +112,4 @@ void	push_to_b(t_stacks *stacks)
 	}
 }
 
-void	ft_solver(t_stacks stacks)
-{
-	print_stack(&stacks);
-	push_to_b(&stacks);
-	if (stacks.flag_v)
-		print_stack(&stacks);
-	solver_for_three1(&stacks);
-	
-	if (stacks.flag_v)
-		print_stack(&stacks);
-	while(stacks.count_b)
-	{
-		sort(&stacks);
-		if (stacks.flag_v)
-			print_stack(&stacks);
-	}
-	//if (!check_sorted(stacks))
-	//	move()	
-}
+

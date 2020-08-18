@@ -6,15 +6,11 @@
 /*   By: ljerk <ljerk@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/01 16:19:51 by ljerk             #+#    #+#             */
-/*   Updated: 2020/08/17 14:25:02 by ljerk            ###   ########.fr       */
+/*   Updated: 2020/08/18 18:50:47 by ljerk            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "includes/push_swap.h"
-
-
-
-
 
 int main(int ac, char **av)
 {

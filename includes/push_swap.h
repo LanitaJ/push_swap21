@@ -6,7 +6,7 @@
 /*   By: ljerk <ljerk@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/30 14:04:27 by ljerk             #+#    #+#             */
-/*   Updated: 2020/08/18 13:48:12 by ljerk            ###   ########.fr       */
+/*   Updated: 2020/08/18 18:57:19 by ljerk            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,4 +73,7 @@ void			solver_for_three1(t_stacks *stacks);
 void			sort(t_stacks *stacks);
 void			count_com(t_stacks stacks, t_commands *com, int i);
 void			do_com1(t_commands com, t_stacks *stacks);
+void			push_to_b(t_stacks *stacks);
+void			move(t_stacks *stacks);
+
 #endif

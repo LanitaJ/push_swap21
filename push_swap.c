@@ -6,11 +6,31 @@
 /*   By: ljerk <ljerk@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/30 18:51:51 by ljerk             #+#    #+#             */
-/*   Updated: 2020/08/18 13:47:06 by ljerk            ###   ########.fr       */
+/*   Updated: 2020/08/18 18:53:27 by ljerk            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "includes/push_swap.h"
+
+void	ft_solver(t_stacks stacks)
+{
+	push_to_b(&stacks);
+	if (stacks.flag_v)
+		print_stack(&stacks);
+	solver_for_three1(&stacks);
+	if (stacks.flag_v)
+		print_stack(&stacks);
+	while(stacks.count_b)
+	{
+		sort(&stacks);
+		if (stacks.flag_v)
+			print_stack(&stacks);
+	}
+	if (!check_sorted(stacks))
+		move(&stacks);
+	if (stacks.flag_v)
+		print_stack(&stacks);	
+}
 
 void	push_swap(t_stacks stacks)
 {
