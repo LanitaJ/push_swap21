@@ -6,7 +6,7 @@
 #    By: ljerk <ljerk@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/07/30 14:07:28 by ljerk             #+#    #+#              #
-#    Updated: 2020/08/17 14:21:57 by ljerk            ###   ########.fr        #
+#    Updated: 2020/08/18 13:46:22 by ljerk            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ SRC_C = ./checker.c ./create_stacks.c ./service.c helpcheck.c ./commands1.c ./co
 		
 
 SRC_P = ./push_swap.c ./create_stacks.c ./service.c helpcheck.c ./commands1.c ./commands2.c ft_atoi_ps.c\
-		./solve.c
+		./solve.c ./count_com.c ./do_com.c ./sort_algo.c 
 
 
 OBJ_C = $(SRC_C:.c=.o)

@@ -6,7 +6,7 @@
 /*   By: ljerk <ljerk@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/15 14:44:40 by ljerk             #+#    #+#             */
-/*   Updated: 2020/08/16 07:20:20 by ljerk            ###   ########.fr       */
+/*   Updated: 2020/08/18 17:51:41 by ljerk            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,14 +92,14 @@ void			ft_do_pa(t_stacks *stacks)
 {
 	int	i;
 
-	if (!stacks->count_a)
+	if (!stacks->count_b)
 		return ;
 	i = stacks->count_a + 1;
 	while (--i > 0)
 		stacks->a[i] = stacks->a[i - 1];
 	ft_swap(&stacks->b[0], &stacks->a[0]);
 	stacks->count_a++;
-	i = 1;
+	i = 0;
 	while (++i <= stacks->count_b)
 		stacks->b[i - 1] = stacks->b[i];
 	stacks->count_b--;

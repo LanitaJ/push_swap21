@@ -6,11 +6,23 @@
 /*   By: ljerk <ljerk@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/30 18:51:51 by ljerk             #+#    #+#             */
-/*   Updated: 2020/08/17 14:23:54 by ljerk            ###   ########.fr       */
+/*   Updated: 2020/08/18 13:47:06 by ljerk            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "includes/push_swap.h"
+
+void	push_swap(t_stacks stacks)
+{
+	if (check_sorted(stacks))
+		return ;
+	if (stacks.count_a == 3 || stacks.count_a == 1)
+		solver_for_three1(&stacks);
+	else if (stacks.count_a == 2 && stacks.a[0] > stacks.a[1])
+		stacks.flag_c ? ft_printf(CYN"sa\n"RESET) : ft_printf("sa\n");
+	else if (stacks.count_a > 3)
+		ft_solver(stacks);
+}
 
 int     main(int ac, char **av)
 {

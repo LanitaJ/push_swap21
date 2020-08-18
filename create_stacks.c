@@ -6,7 +6,7 @@
 /*   By: ljerk <ljerk@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/12 15:54:47 by ljerk             #+#    #+#             */
-/*   Updated: 2020/08/17 14:24:50 by ljerk            ###   ########.fr       */
+/*   Updated: 2020/08/18 13:47:16 by ljerk            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,6 @@ static int		*create_stack_a(int *ac, char **av, t_stacks *stacks)
 	char	**arr;
 		
 	n = count_nums(av);
-	//ft_printf("n = %d\n", n);
 	*ac = n;
 	stack_a = (int*)ft_memalloc(sizeof(int*) * n);
 	i = 0;
