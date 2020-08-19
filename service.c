@@ -6,7 +6,7 @@
 /*   By: ljerk <ljerk@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/15 15:21:57 by ljerk             #+#    #+#             */
-/*   Updated: 2020/08/18 18:59:07 by ljerk            ###   ########.fr       */
+/*   Updated: 2020/08/19 12:41:15 by ljerk            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,13 +42,13 @@ void	print_stack(t_stacks *stacks)
 	int	i;
 
 	i = 0;
-	stacks->flag_c ? ft_printf(YEL"Stack A: "RESET) : ft_printf("Stack A: ");
+	stacks->flag_c ? ft_printf(CYN"Stack A: "RESET) : ft_printf("Stack A: ");
 	while (i < stacks->count_a)
-		stacks->flag_c ? ft_printf(YEL"%d "RESET, stacks->a[i++]) : ft_printf("%d ", stacks->a[i++]);
+		stacks->flag_c ? ft_printf(CYN"%d "RESET, stacks->a[i++]) : ft_printf("%d ", stacks->a[i++]);
 	ft_printf("\n");
 	i = 0;
 	stacks->flag_c ? ft_printf(MAG"Stack B: "RESET) : ft_printf("Stack B: ");
 	while (i < stacks->count_b)
 		stacks->flag_c ? ft_printf(MAG"%d "RESET, stacks->b[i++]) : ft_printf("%d ", stacks->b[i++]);
-	ft_printf("\n");
+	ft_printf("\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n");
 }

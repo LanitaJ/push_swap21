@@ -6,7 +6,7 @@
 #    By: ljerk <ljerk@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/07/30 14:07:28 by ljerk             #+#    #+#              #
-#    Updated: 2020/08/18 13:46:22 by ljerk            ###   ########.fr        #
+#    Updated: 2020/08/19 13:08:28 by ljerk            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,21 +35,21 @@ FLAGS = -Wall -Wextra -Werror
 all: $(NAME_C) $(NAME_P)
 
 %.o: %.c
-	@$(CC) -c $(FLAGS) $<
+	$(CC) -c $(FLAGS) $<
 
 $(NAME_C): $(OBJ_C)
-	@$(MAKE) -C $(LIB_DIR)
-	@$(CC) $(FLAGS) -o $(NAME_C) $(OBJ_C) $(LIBFT)
+	$(MAKE) -C $(LIB_DIR)
+	$(CC) $(FLAGS) -o $(NAME_C) $(OBJ_C) $(LIBFT)
 
 $(NAME_P): $(OBJ_P)
-	@$(CC) $(FLAGS) -o $(NAME_P) $(OBJ_P) $(LIBFT)
+	$(CC) $(FLAGS) -o $(NAME_P) $(OBJ_P) $(LIBFT)
 
 clean:
-	@rm -rf $(OBJ_C) $(OBJ_P)
-	@$(MAKE) -C $(LIB_DIR) clean
+	rm -rf $(OBJ_C) $(OBJ_P)
+	$(MAKE) -C $(LIB_DIR) clean
 
 fclean: clean
-	@rm -rf $(NAME_C) $(NAME_P)
-	@$(MAKE) -C $(LIB_DIR) fclean
+	rm -rf $(NAME_C) $(NAME_P)
+	$(MAKE) -C $(LIB_DIR) fclean
 
 re: fclean all
