@@ -6,7 +6,7 @@
 #    By: ljerk <ljerk@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/07/30 14:07:28 by ljerk             #+#    #+#              #
-#    Updated: 2020/08/19 13:08:28 by ljerk            ###   ########.fr        #
+#    Updated: 2020/09/07 12:11:23 by ljerk            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,25 +16,25 @@ NAME_P = push_swap
 LIB_DIR = ./ft_printf/
 LIBFT = $(LIB_DIR)libftprintf.a
 
-SRC_C = ./checker.c ./create_stacks.c ./service.c helpcheck.c ./commands1.c ./commands2.c ft_atoi_ps.c\
+SRC_C = ./checker.c ./create_stacks.c ./service.c ./helpcheck.c ./commands1.c ./commands2.c ft_atoi_ps.c\
 		
 
-SRC_P = ./push_swap.c ./create_stacks.c ./service.c helpcheck.c ./commands1.c ./commands2.c ft_atoi_ps.c\
+SRC_P = ./push_swap.c ./create_stacks.c ./service.c ./helpcheck.c ./commands1.c ./commands2.c ft_atoi_ps.c\
 		./solve.c ./count_com.c ./do_com.c ./sort_algo.c 
 
 
 OBJ_C = $(SRC_C:.c=.o)
 OBJ_P = $(SRC_P:.c=.o)
 
-INCLUDE = ./push_swap.h
+INCLUDE = ./includes/push_swap.h
 
-CC = gcc -g
+CC = gcc
 
 FLAGS = -Wall -Wextra -Werror
 
 all: $(NAME_C) $(NAME_P)
 
-%.o: %.c
+%.o: %.c $(INCLUDE)
 	$(CC) -c $(FLAGS) $<
 
 $(NAME_C): $(OBJ_C)

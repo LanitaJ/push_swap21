@@ -6,7 +6,7 @@
 /*   By: ljerk <ljerk@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/30 18:51:51 by ljerk             #+#    #+#             */
-/*   Updated: 2020/08/19 12:39:44 by ljerk            ###   ########.fr       */
+/*   Updated: 2020/09/07 12:22:31 by ljerk            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	ft_solver(t_stacks stacks)
 	solver_for_three1(&stacks);
 	if (stacks.flag_v)
 		print_stack(&stacks);
-	while(stacks.count_b)
+	while (stacks.count_b)
 	{
 		sort(&stacks);
 		if (stacks.flag_v)
@@ -29,7 +29,7 @@ void	ft_solver(t_stacks stacks)
 	if (!check_sorted(stacks))
 		move(&stacks);
 	if (stacks.flag_v)
-		print_stack(&stacks);	
+		print_stack(&stacks);
 }
 
 void	push_swap(t_stacks stacks)
@@ -44,10 +44,10 @@ void	push_swap(t_stacks stacks)
 		ft_solver(stacks);
 }
 
-int     main(int ac, char **av)
+int		main(int ac, char **av)
 {
-	int	fd;
-	t_stacks stacks;
+	int			fd;
+	t_stacks	stacks;
 
 	av++;
 	ft_bzero(&stacks, sizeof(t_stacks));
@@ -66,27 +66,3 @@ int     main(int ac, char **av)
 	free(stacks.a);
 	free(stacks.b);
 }
-
-/*
-p_s:
-создание 2 стеков
-	выделение памяти
-	вычленение из av чисел
-	запись в структуру
-	проверка на дубликаты
-	проверка что это числа инта
-проверка отсортирован ли массив, пустой ли стек В
-если нет, то алгоритм сортировки
-	находим мин и макс
-	
-	
-парсинг файла с командами
-	в цикле:
-		гнл считывает строку
-		валидирование команды
-		выполнение команды
-		очистка памяти гнл
-проверка выполнения алгоритма (отсортирован ли массив, пустой ли стек В)
-очистка массивов
-
-*/

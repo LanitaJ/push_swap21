@@ -6,7 +6,7 @@
 /*   By: ljerk <ljerk@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/12 15:54:47 by ljerk             #+#    #+#             */
-/*   Updated: 2020/08/18 13:47:16 by ljerk            ###   ########.fr       */
+/*   Updated: 2020/09/07 12:53:13 by ljerk            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 static int		check_double(t_stacks *stacks)
 {
 	int	i;
-	int j;
+	int	j;
 
 	i = 0;
 	while (i < stacks->count_a)
@@ -43,9 +43,7 @@ static int		count_nums(char **av)
 	i = 0;
 	while (av[i])
 	{
-		//ft_printf("%s\n", av[i]);
 		arr = ft_strsplit(av[i], ' ');
-		//ft_printf("***%s\n%s\n", arr[0], arr[1]);
 		j = 0;
 		while (arr[j++])
 			n++;
@@ -62,12 +60,16 @@ static int		*create_stack_a(int *ac, char **av, t_stacks *stacks)
 	int		i;
 	int		j;
 	char	**arr;
-		
+
 	n = count_nums(av);
+	if (!n)
+		exit(1);
 	*ac = n;
 	stack_a = (int*)ft_memalloc(sizeof(int*) * n);
-	i = 0;
+	if (stack_a == NULL)
+		exit(1);
 	n = 0;
+	i = 0;
 	while (av[i])
 	{
 		arr = ft_strsplit(av[i], ' ');
@@ -80,10 +82,12 @@ static int		*create_stack_a(int *ac, char **av, t_stacks *stacks)
 	return (stack_a);
 }
 
-void	create_stacks(t_stacks *stacks, int ac, char **av)
+void			create_stacks(t_stacks *stacks, int ac, char **av)
 {
 	stacks->a = create_stack_a(&ac, av, stacks);
 	stacks->b = (int*)ft_memalloc(sizeof(int*) * ac);
+	if (stacks->b == NULL)
+		exit(1);
 	stacks->count_a = ac;
 	if (check_double(stacks))
 		print_error(stacks);

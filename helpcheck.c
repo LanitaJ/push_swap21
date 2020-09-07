@@ -6,7 +6,7 @@
 /*   By: ljerk <ljerk@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/15 14:29:02 by ljerk             #+#    #+#             */
-/*   Updated: 2020/08/19 13:22:15 by ljerk            ###   ########.fr       */
+/*   Updated: 2020/09/07 13:06:16 by ljerk            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ static void		next_commands(t_stacks *stacks, char *line)
 		print_error(stacks);
 }
 
-static void    make_commands(t_stacks *stacks, char *line)
+static void		make_commands(t_stacks *stacks, char *line)
 {
 	if (ft_strequ(line, "sa"))
 		ft_do_sa(stacks);
@@ -62,7 +62,7 @@ static void    make_commands(t_stacks *stacks, char *line)
 	else if (ft_strequ(line, "rra"))
 		ft_do_rra(stacks);
 	else if (ft_strequ(line, "rrb"))
-		ft_do_rrb(stacks);	
+		ft_do_rrb(stacks);
 	else if (ft_strequ(line, "pb"))
 		ft_do_pb(stacks);
 	else if (ft_strequ(line, "pa"))
@@ -71,15 +71,17 @@ static void    make_commands(t_stacks *stacks, char *line)
 		next_commands(stacks, line);
 }
 
-int		check(int fd, t_stacks *stacks)
+int				check(int fd, t_stacks *stacks)
 {
 	char	*line;
 
+	if (check_sorted(*stacks))
+		return (1);
 	while (get_next_line(fd, &line) > 0)
 	{
 		if (stacks->flag_v)
-			stacks->flag_c ? ft_printf(YEL"Operation %s\n"RESET, line)
-			: ft_printf("Operation %s\n", line);
+			stacks->flag_c ? ft_printf(CYN"Operation %s\n\n"RESET, line)
+			: ft_printf("Operation %s\n\n", line);
 		make_commands(stacks, line);
 		if (stacks->flag_v)
 			print_stack(stacks);

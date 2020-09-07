@@ -6,7 +6,7 @@
 /*   By: ljerk <ljerk@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/17 19:39:48 by ljerk             #+#    #+#             */
-/*   Updated: 2020/08/19 12:39:48 by ljerk            ###   ########.fr       */
+/*   Updated: 2020/08/19 16:38:29 by ljerk            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int		min_com(int *arr, int count)
 	int	min;
 	int	i;
 	int	index;
-	
+
 	i = 0;
 	index = 0;
 	min = arr[0];

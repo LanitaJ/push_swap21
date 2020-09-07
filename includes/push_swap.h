@@ -6,7 +6,7 @@
 /*   By: ljerk <ljerk@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/30 14:04:27 by ljerk             #+#    #+#             */
-/*   Updated: 2020/08/19 13:09:22 by ljerk            ###   ########.fr       */
+/*   Updated: 2020/09/07 13:04:58 by ljerk            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 
 # include "../ft_printf/includes/ft_printf.h"
 # include <fcntl.h>
-
 # define CYN	"\x1B[36m"
 # define RED	"\x1B[31m"
 # define GRN	"\x1B[32m"
@@ -24,7 +23,6 @@
 # define MAG	"\x1B[35m"
 # define WHT	"\x1B[37m"
 # define RESET	"\x1B[0m"
-
 # define MIN(X, Y) ((X) < (Y) ? (X) : (Y))
 
 typedef struct	s_stacks
@@ -50,7 +48,6 @@ typedef struct	s_commands
 	int			count;
 }				t_commands;
 
-
 void			ft_do_sa(t_stacks *stacks);
 void			ft_do_sb(t_stacks *stacks);
 void			ft_do_rra(t_stacks *stacks);
@@ -59,7 +56,6 @@ void			ft_do_rrb(t_stacks *stacks);
 void			ft_do_rb(t_stacks *stacks);
 void			ft_do_pb(t_stacks *stacks);
 void			ft_do_pa(t_stacks *stacks);
-
 void			print_error(t_stacks *stacks);
 void			create_stacks(t_stacks *stacks, int ac, char **av);
 void			print_stack(t_stacks *stacks);

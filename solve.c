@@ -6,25 +6,25 @@
 /*   By: ljerk <ljerk@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/17 13:44:32 by ljerk             #+#    #+#             */
-/*   Updated: 2020/08/19 12:39:28 by ljerk            ###   ########.fr       */
+/*   Updated: 2020/09/07 12:43:42 by ljerk            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "includes/push_swap.h"
 
-static void	solver_for_three2(t_stacks *stacks, int a, int b, int c)
+static void		solver_for_three2(t_stacks *stacks, int a, int b, int c)
 {
-	if (a < b && a > c && b > c)//231
+	if (a < b && a > c && b > c)
 	{
 		stacks->flag_c ? ft_printf(CYN"rra\n"RESET) : ft_printf("rra\n");
 		ft_do_rra(stacks);
 	}
-	if (a > b && a < c && b < c)//213
+	if (a > b && a < c && b < c)
 	{
 		stacks->flag_c ? ft_printf(CYN"sa\n"RESET) : ft_printf("sa\n");
 		ft_do_sa(stacks);
 	}
-	if (b > a && b > c && c > a)//132
+	if (b > a && b > c && c > a)
 	{
 		stacks->flag_c ? ft_printf(CYN"sa\nra\n"RESET)
 			: ft_printf("sa\nra\n");
@@ -33,7 +33,7 @@ static void	solver_for_three2(t_stacks *stacks, int a, int b, int c)
 	}
 }
 
-void	solver_for_three1(t_stacks *stacks)
+void			solver_for_three1(t_stacks *stacks)
 {
 	int a;
 	int b;
@@ -42,14 +42,14 @@ void	solver_for_three1(t_stacks *stacks)
 	a = stacks->a[0];
 	b = stacks->a[1];
 	c = stacks->a[2];
-	if (a > b && a > c && b > c)//321
+	if (a > b && a > c && b > c)
 	{
-		stacks->flag_c ? ft_printf(CYN"sa\nrra\n"RESET) 
+		stacks->flag_c ? ft_printf(CYN"sa\nrra\n"RESET)
 						: ft_printf("sa\nrra\n");
 		ft_do_sa(stacks);
 		ft_do_rra(stacks);
 	}
-	if (a > b && a > c && b < c)//312
+	if (a > b && a > c && b < c)
 	{
 		stacks->flag_c ? ft_printf(CYN"ra\n"RESET) : ft_printf("ra\n");
 		ft_do_ra(stacks);
@@ -57,7 +57,13 @@ void	solver_for_three1(t_stacks *stacks)
 	solver_for_three2(stacks, a, b, c);
 }
 
-static void	split_two(t_stacks *stacks)
+static void		dop_pb(t_stacks *stacks)
+{
+	ft_do_pb(stacks);
+	stacks->flag_c ? ft_printf(CYN"pb\n"RESET) : ft_printf("pb\n");
+}
+
+static void		split_two(t_stacks *stacks)
 {
 	long	m;
 	int		lim;
@@ -68,21 +74,18 @@ static void	split_two(t_stacks *stacks)
 	i = 0;
 	while (lim > 50 && i++ < lim)
 	{
-		if (stacks->a[0] == stacks->max || stacks->a[0] == stacks->max ||
-			 stacks->a[0] < m)
+		if (stacks->a[0] == stacks->max || stacks->a[0] == stacks->min ||
+			stacks->a[0] < m)
 		{
-			stacks->flag_c ? ft_printf(CYN"ra\n"RESET) : ft_printf("ra\n");
 			ft_do_ra(stacks);
+			stacks->flag_c ? ft_printf(CYN"ra\n"RESET) : ft_printf("ra\n");
 		}
 		else
-		{
-			stacks->flag_c ? ft_printf(CYN"pb\n"RESET) : ft_printf("pb\n");
-			ft_do_pb(stacks);
-		}
+			dop_pb(stacks);
 	}
 }
 
-void	push_to_b(t_stacks *stacks)
+void			push_to_b(t_stacks *stacks)
 {
 	int	i;
 
@@ -105,11 +108,6 @@ void	push_to_b(t_stacks *stacks)
 			ft_do_ra(stacks);
 		}
 		else
-		{
-			stacks->flag_c ? ft_printf(CYN"pb\n"RESET) : ft_printf("pb\n");
-			ft_do_pb(stacks);
-		}
+			dop_pb(stacks);
 	}
 }
-
-

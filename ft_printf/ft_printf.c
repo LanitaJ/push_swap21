@@ -6,7 +6,7 @@
 /*   By: ljerk <ljerk@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/05 23:09:32 by ljerk             #+#    #+#             */
-/*   Updated: 2020/03/06 17:50:57 by ljerk            ###   ########.fr       */
+/*   Updated: 2020/08/29 13:07:41 by ljerk            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,8 @@ int		ft_printf(const char *format, ...)
 
 	va_start(spec.ap, format);
 	spec.format = ft_strdup(format);
+	if (spec.format == NULL)
+		exit(0);
 	spec.fd = 1;
 	parse(&spec, &flag);
 	va_end(spec.ap);
